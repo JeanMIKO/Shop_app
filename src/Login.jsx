@@ -14,48 +14,46 @@ export default function Login() {
 
     if (email === storedEmail && password === storedPassword) {
       setError("");
-      navigate("/welcome");
+      navigate("/products");
     } else {
       setError("Email ou mot de passe incorrect");
     }
   };
 
   return (
-    <div className="bg-[#A3D5C3] min-h-screen flex items-center justify-center">
-      <div className="bg-white rounded-[30px] p-10 w-full max-w-md shadow-md text-center">
-        <h1 className="text-2xl font-bold text-gray-800 mb-2">Create An Account</h1>
-        <p className="text-gray-600 text-sm mb-6">
-          Create an account to enjoy all the services<br />without any ads for free!
+    <div className="bg-gradient-to-br from-[#A3D5C3] to-[#6BBF9C] min-h-screen flex items-center justify-center">
+      <div className="bg-white rounded-2xl p-10 w-full max-w-md shadow-xl">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2 text-center">Connexion</h1>
+        <p className="text-gray-600 text-sm mb-6 text-center">
+          Connectez-vous pour accéder à vos produits et profiter de nos services.
         </p>
 
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+        {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="Email Address"
+            placeholder="Adresse email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A3D5C3]"
-          />
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6BBF9C]" />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Mot de passe"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A3D5C3]"
-          />
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6BBF9C]"/>
+
           <button
             type="submit"
-            className="w-full bg-[#A3D5C3] text-white font-semibold py-3 rounded-md hover:bg-[#91c9b3] transition"
-          >
-            Create Account
+            className="w-full bg-[#6BBF9C] text-white font-semibold py-3 rounded-lg hover:bg-[#58a986] transition">
+            Login
           </button>
         </form>
 
-        <p className="text-sm text-gray-600 mt-6">
-          Already Have An Account?
-          <a href="#" className="text-gray-700 font-medium underline">Sign In</a>
+        <p className="text-sm text-gray-600 mt-6 text-center">
+          Pas encore de compte ?{" "}
+          <a href="#" className="text-[#6BBF9C] font-medium hover:underline">Créer un compte</a>
         </p>
       </div>
     </div>

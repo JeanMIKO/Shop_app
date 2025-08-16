@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Login";
-import Welcome from "./Welcome";
+import Products from "./Products";
+import ProductDetails from "./ProductDetails";
 
 function App() {
 
@@ -8,12 +9,14 @@ function App() {
 
   localStorage.setItem("email", "mikojean@gmail.com");
   localStorage.setItem("password", "softcare1");
+  localStorage.setItem("username", "Falconnet MIKO"); 
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
     </Router>
   );
